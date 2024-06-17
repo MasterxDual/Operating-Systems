@@ -1,0 +1,60 @@
+Sistemas Operativos - Referencias
+---------------------------------
+
+Puede usar como referencia del lenguaje la pagina 
+    
+    https://users.cs.cf.ac.uk/Dave.Marshall/C/
+    
+
+A) Escriba cada programa con un encabezamiento que indique Objetivo,
+Grupo e integrantes y fecha.
+
+Ej.
+
+/**************************************************************\
+ Autor: A B
+ Practico: N
+ Objetivo: Escribir un buen encabezado.
+ Fecha: 04/04/2020
+\**************************************************************/
+
+B) Use nombres de variables "significativas", en este sentido cada
+variable utilizada debe sugerir por su nombre para que se usa, pero al
+mismo tiempo comente su programa de modo que se especifique para que
+se usa cada variable y comente adicionalmente los bloques funcionales
+importantes del mismo. No exagere en el uso de comentarios.
+
+C) Use un estilo consistente de identacion, ante la duda use el
+programa indent para mejorar su estilo, 
+
+    Ej.
+	   $ indent -kr -ts4 hola.c
+    donde	
+	       -kr corresponde al estilo "Kerningham y Ritchie" 
+	       -ts4 corresponde a reemplazar todas las tabulaciones
+                por 4 espacios.
+
+D) Es de capital importancia analizar los valores de retorno de
+las funciones utilizadas de modo de capturar errores en tiempo
+de ejecucion, por lo tanto en las llamadas al sistema chequee
+los valores retornados por las mismas y detenga el programa si
+detecta una condicion de error. Use la funcion perror() para el
+reporte de errores.
+
+E) Si abre un descriptor de archivo, no se olvide de cerrarlo
+correctamente usando close().
+
+F) Pregunte lo que no sepa, pero se espera que use de forma extensiva
+las paginas de manual, 
+
+    Ej
+    
+	   $ man 2 stat
+       
+    Consultamos la seccion 2 del manual
+
+Si no sabe a cual página de manual debemos acceder, pruebe con
+
+	$ apropos cmd
+	$ man -k cmd
+

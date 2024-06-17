@@ -1,0 +1,10 @@
+total 68
+-rw-rw-r-- 1 masterxdual masterxdual  1259 abr 14 14:43 data
+-rwxrwxr-x 1 masterxdual masterxdual 16008 abr 11 18:34 exercise1
+-rw-rw-r-- 1 masterxdual masterxdual   683 abr 11 18:34 exercise1.c
+-rwxrwxr-x 1 masterxdual masterxdual 16320 abr 14 20:32 exercise2
+-rw-rw-r-- 1 masterxdual masterxdual  2377 abr 14 20:31 exercise2.c
+-rwxrwxr-x 1 masterxdual masterxdual 16280 abr 14 20:12 exercise3
+-rw-rw-r-- 1 masterxdual masterxdual  1829 abr 14 20:15 exercise3.c
+-rw-rw-r-- 1 masterxdual masterxdual  2789 abr 14 21:14 exercise4.c
+-rw-rw-r-- 1 masterxdual masterxdual     0 abr 14 21:20 origin_file

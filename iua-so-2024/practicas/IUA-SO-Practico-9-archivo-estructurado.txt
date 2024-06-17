@@ -1,0 +1,91 @@
+Sistemas Operativos - Archivo estructurado
+------------------------------------------
+
+1) Archivo estructurado
+El objetivo de esta práctica es aprender a leer un archivo estructurado.
+En particular utilizaremos como ejemplo un archivo en formato ISO2709. Es un
+formato desarrollado para almacenar información bibliográfica, y se corresponde
+con el formato MARC21 que es utilizado en la Argentina.
+
+La relevancia para el tema de archivos es que se puede ver a un registro
+MARC21 como un mini-filesystem, con entradas de directorio de tamaño fijo
+y bloques de datos variables.
+
+Un archivo en formato ISO2709 está constituido por
+  1) Uno a más registros (1+)
+  2) Cada registro posee una cabecera de tamaño fijo
+  3) Cada registro posee uno o más campos (tags) (1+)
+  4) Cada campo posee cero o más subcampos (0+)
+
+Es un ejemplo de un formato diseñado para ser leido por computadoras... de los
+años 60's. Sin embargo es el formato más utilizado internacionalmente.
+
+Un registro MARC21 se puede ver como lo siguiente
+
+01030nam a22002657a 4500
+003 AR_CdUFM
+005 20160503150707.0
+008 111121s2015    nju||||| |||| 00| 0 eng d
+020    $a 013359162X
+020    $a 9780133591620
+040    $a AR_CdUFM $c AR_CdUFM
+100 1  $a Tanenbaum, Andrew S., $d 1944-
+245 10 $a Modern operating systems / $c Andrew S. Tanenbaum, Herbert Bos.
+250    $a 4a ed.
+260    $a New Jersey :  $b Pearson Education,  $c 2015.
+300    $a xxvi, 2001 p. : $b il. ; $c 25 cm.
+
+Podemos observar:
+1) Cabecera de 21 chars contando espacios
+2) Campos (003,005,...,300)
+3) Subcampos
+   003 ninguno
+   020 uno ($a)
+   260 tres ($a,$b,$c)
+
+No interesa a los fines del práctico cual es el significado de cada campo, pero
+podemos observar que 020 es el ISBN, 100 autor, 245 titulo, 260 editor
+
+El formato ISO2709 se desarrolló para almacenar registros MARC21, codificando
+la información presente. Conociendo cual es la estructura del formato ISO2709
+debemos aprender a 'decodificar' la información.
+
+La información está codificada en un "directorio" el cual indica donde están
+los datos ("archivos"), su tamaño y estructura
+
+Entonces:
+
+A) Escriba un programa que lea e interprete el archivo de ejemplo osbooks.iso2709
+
+Para poder interpretar el archivo utilice la información de https://www.loc.gov/marc/specifications/specrecstruc.html
+Procese el archivo e imprima su información
+
+Discusión
+---------
+Se desea obtener un comportamiento similar al del programa yaz-marcdump (paquete yaz),
+que genera una salida como
+$ yaz-marcdump -i marc -o line osbooks.iso2709
+
+00856nam a22002537a 4500
+003 AR_CdUFM
+005 20160503150707.0
+008 111121s2015    nju||||| |||| 00| 0 eng d
+020    $a 013359162X
+020    $a 9780133591620
+040    $a AR_CdUFM $c AR_CdUFM
+100 1  $a Tanenbaum, Andrew S., $d 1944-
+245 10 $a Modern operating systems / $c Andrew S. Tanenbaum, Herbert Bos.
+250    $a 4a ed.
+260    $a New Jersey :  $b Pearson Education,  $c 2015.
+300    $a xxvi, 2001 p. : $b il. ; $c 25 cm.
+504    $a Incluye bibliografía e índice.
+541    $a Ciencia y Técnica de Edwin Ventura Oscanova ; $c Compra Programa de Bibliotecas 2015 ;  $d 2016-05-03 ; $e 22577 ; $h $3.900 ; $o Libro
+650  4 $a Operating systems.
+653    $a Sistemas operativos.
+700 1  $a Bos, Herbert
+942    $c LIBRO $2 CCS
+945    $a MCR $d 2016-05-03
+999    $c 17560 $d 17558
+
+Lo que se ve aquí es similar a https://catalogo.iua.edu.ar/cgi-bin/koha/opac-MARCdetail.pl?biblionumber=2161
+
